@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+    application:
+      name: device-service
+    datasource:
+      druid:
+        url: jdbc:mysql://mysql:3306/courseware?autoReconnect=true&useSSL=false
+        username: root
+        password: wp
+        driver-class-name: com.mysql.jdbc.Driver
+
+        initial-size: 1
+        max-active: 20
+        min-idle: 1
+        max-wait: 50000
+        max-pool-prepared-statement-per-connection-size: 20
+        pool-prepared-statements: true
+        validation-query: select 1 from valid_code
+        validation-query-timeout: 30000
+        test-on-borrow: false
+        test-on-return: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 60000
+        filters: stat,wall,slf4j
+
+logging:
+  level:
+    com.timeanime.courseware.mapper: debug
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+
+
+
