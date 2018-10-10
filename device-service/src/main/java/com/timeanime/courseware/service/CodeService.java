@@ -6,6 +6,7 @@ import com.timeanime.courseware.mapper.CodeMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class CodeService {
@@ -24,6 +25,8 @@ public class CodeService {
 
         return DeviceConstants.CODE_IS_VALID;
     }
+
+    public List<Code> findAllCode(){return codeMapper.findAllCode();}
 
     public Code findCodeByNum(String num){
         return codeMapper.findCodeByNum(num);

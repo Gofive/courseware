@@ -4,6 +4,8 @@ package com.timeanime.courseware.mapper;
 import com.timeanime.courseware.entity.ValidRecord;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface ValidRecordMapper {
 
@@ -18,4 +20,10 @@ public interface ValidRecordMapper {
 
     @Select("select * from valid_record where id = #{id}")
     ValidRecord findRecordById(@Param("id") int id);
+
+    @Select("select * from valid_record")
+    List<ValidRecord> findAll();
+
+    @Delete("delete * from valid_record where id = #{id}")
+    void delExpRecord(ValidRecord validRecord);
 }

@@ -6,8 +6,13 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface CodeMapper {
+
+    @Select("select * from valid_code")
+    List<Code> findAllCode();
 
     @Select("select * from valid_code where id = #{id}")
     Code findCodeById(@Param("id") int id);

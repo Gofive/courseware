@@ -23,6 +23,7 @@ public abstract class DeviceConstants {
     public final static int YOYO_READ = 5;
     public final static int YOYO_FUNREAD = 6;
     public final static int YOYO_ART = 7;
+    public final static int YOYO_FUNCLASS = 8;
 
     //DEVICE TYPE
     public final static int WINDOWS_DEVICE = 1;
